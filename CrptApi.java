@@ -62,7 +62,7 @@ public class CrptApi {
                                 .POST(HttpRequest.BodyPublishers.ofString(requestBody))
                                 .build();
 
-                        httpClient.send(request, HttpResponse.BodyHandlers.ofString());
+                       HttpResponse<String> response = httpClient.send(request, HttpResponse.BodyHandlers.ofString());
                         requestCount.decrementAndGet();
                     } catch (IOException | InterruptedException e) {
                         throw new RuntimeException(e);
